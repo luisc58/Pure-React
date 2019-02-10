@@ -9,6 +9,14 @@ const AppContainer = Styled.div`
   grid-template-columns: 0.25fr auto;
 `;
 
+function createMessage(text, messageId) {
+	return {
+		id: messageId,
+		username: 'Luis',
+		text: text,
+		timeStamp: new Date()
+	};
+}
 // Top level component
 class App extends Component {
 	state = {
@@ -17,6 +25,14 @@ class App extends Component {
 		selectedChannelId: 1
 	};
 
+	createMessage = (text, messageId) => {
+		return {
+			id: messageId,
+			username: 'Luis',
+			text: text,
+			timeStamp: new Date()
+		};
+	};
 	findName = (arr, id) => {
 		let filteredArr = arr.filter((e) => e.id === id);
 		return filteredArr[0].name;
